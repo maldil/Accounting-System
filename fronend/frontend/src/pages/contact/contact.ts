@@ -375,7 +375,6 @@ export class ContactPage implements OnInit{
     this.http.get("http://localhost:3000/logout",{headers:myheader, withCredentials:true});
     var nav = this.app.getRootNav();
     nav.setRoot(LoginPage);
-    window.location.reload();
   }
   deleteProfile(){
     let myheader = new HttpHeaders();
