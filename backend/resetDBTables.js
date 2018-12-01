@@ -2,7 +2,7 @@ var dbconnection = require('./dbConnection');
 
 var income_categories = ["salary","part-time","financial","other"];
 var cost_categories = ["food","drink","traffic","shopping","entertainment","home","electronics","medical"];
-var icon_name = ["NA","NA","card","logo-usd","logo-bitcoin","globe","pizza","beer","bus","pricetag","game-controller-a","home","portrait","medical"];
+var icon_name = ["NA","NA","card","logo-usd","logo-bitcoin","globe","pizza","beer","bus","pricetag","game-controller-a","home","phone-portrait","medical"];
 
 var table_name1 = "profile";
 var sql1 = "CREATE TABLE profile (USER_NAME VARCHAR(20) NOT NULL UNIQUE, FIRST_NAME VARCHAR(20) NOT NULL, LAST_NAME VARCHAR(20),AGE INT, BIRTH_DAY DATE, SEX VARCHAR(20), INCOME FLOAT)";
