@@ -6,8 +6,11 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title  *ngIf="!isNewCategory">Add a New Income</ion-title>
+  <ion-navbar style="height: 50px">
+    <ion-title  *ngIf="!isNewCategory">
+      Add a New Income
+    </ion-title>
+
     <ion-title  *ngIf="isNewCategory">
       <ion-buttons>
         <button ion-button (click)="back()">
@@ -16,8 +19,9 @@
       </ion-buttons>
     </ion-title>
   </ion-navbar>
-  <div *ngIf="!isNewCategory">
-    <ion-grid>
+  <div *ngIf="!isNewCategory" style="background-color: white">
+
+    <ion-grid >
       <ion-row text-center>
         <ion-col>
           <button ion-button outline color="danger" class="add-button" (click)="presentNewExpense()">Expense
@@ -25,7 +29,7 @@
           </button>
         </ion-col>
         <ion-col>
-          <button ion-button outline color="secondary" class="add-button">Income
+          <button ion-button outline  color="secondary" class="add-button">Income
             <!--<ion-icon class="icon-plus-minus" name="ios-add-outline" color="secondary"></ion-icon>-->
           </button>
         </ion-col>
@@ -67,7 +71,7 @@
       <ion-col  no-padding no-margin>
         <ion-item no-padding no-margin>
           <ion-label><ion-icon name="ios-create-outline"></ion-icon></ion-label>
-          <ion-input [(ngModel)]="item.amount" placeholder="$0.00" ng-pattern="/^[0-9]{1,7}(\.[0-9]+)?$/" clearInput (keyup.enter)="handleEnter()"></ion-input>
+          <ion-input type="number" [(ngModel)]="item.amount" placeholder="$0.00" ng-pattern="/^[0-9]{1,7}(\.[0-9]+)?$/" clearInput (keyup.enter)="handleEnter()"></ion-input>
         </ion-item>
       </ion-col>
     </ion-row>

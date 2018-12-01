@@ -5,7 +5,7 @@
 -->
 <ion-header>
 
-  <ion-navbar >
+  <ion-navbar style="height: 50px">
     <ion-title  *ngIf="!isNewCategory">
       Add a New Expense
     </ion-title>
@@ -23,18 +23,18 @@
     <ion-grid >
       <ion-row text-center>
         <ion-col>
-          <button ion-button outline color="danger" class="add-button" >Expense
+          <button ion-button outline  color="danger" class="add-button">Expense
             <!--<ion-icon  name="ios-remove-outline" color="danger"></ion-icon>-->
           </button>
         </ion-col>
         <ion-col>
-          <button ion-button outline color="secondary" class="add-button" (click)="presentNewIncome()">Income
+          <button ion-button outline  color="secondary" class="add-button"(click)="presentNewIncome()">Income
             <!--<ion-icon  name="ios-add-outline" color="secondary"></ion-icon>-->
           </button>
         </ion-col>
       </ion-row>
     </ion-grid>
-    <p text-center (click)="showCalendar()"><ion-icon name="ios-calendar-outline"></ion-icon> {{ item.entry_time | date: 'EEEE, dd-MM-yyyy' }}</p>
+    <p text-center (click)="showCalendar()"><ion-icon name="ios-calendar-outline"></ion-icon> {{ item.entry_time | date: 'EEEE, dd MMM yyyy' }}</p>
 
   </div>
 
@@ -71,7 +71,7 @@
       <ion-col  no-padding no-margin>
         <ion-item no-padding no-margin>
           <ion-label><ion-icon name="ios-create-outline"></ion-icon></ion-label>
-          <ion-input [(ngModel)]="item.amount" placeholder="$0.00" ng-pattern="/^[0-9]{1,7}(\.[0-9]+)?$/" clearInput (keyup.enter)="handleEnter()"></ion-input>
+          <ion-input type="number" [(ngModel)]="item.amount" placeholder="$0.00" ng-pattern="/^[0-9]{1,7}(\.[0-9]+)?$/" clearInput (keyup.enter)="handleEnter()"></ion-input>
         </ion-item>
       </ion-col>
     </ion-row>

@@ -300,7 +300,7 @@ export class CategoryPage implements OnInit{
 
 
     // this.navCtrl.push('ItemPage')
-    this.app.getRootNav().push('ItemPage');
+    this.navCtrl.push('ItemPage');
   }
   click(category: String) {
     this.item.category = category;

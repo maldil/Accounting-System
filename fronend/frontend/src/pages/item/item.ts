@@ -129,9 +129,19 @@ export class ItemPage implements OnInit{
   }
   addCategory(newcategory: Newcategory) {
     if (newcategory.name === '') {
-       this.presentToast('Category name must be filled');
+      let toast = this.toastCtrl.create({
+        message: 'Category name must be filled',
+        duration: 3000,
+        position: 'bottom'
+      });
+      toast.present();
     } else if (newcategory.icon === '') {
-      this.presentToast('Category icon should be selected');
+      let toast = this.toastCtrl.create({
+        message: 'Category icon should be selected',
+        duration: 3000,
+        position: 'bottom'
+      });
+      toast.present();
     } else {
       // set type catergory
       this.newcategory.type = 'income';
