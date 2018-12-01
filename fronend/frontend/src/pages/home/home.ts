@@ -70,9 +70,10 @@ getdata() {
 
           //1. create dynamic table
           var table = document.createElement("table");
+          table.setAttribute("width","100%");
+          table.style.fontSize="1.75rem";
 
 
-          
           //2. create html table header row using the extracted headers above
           //The value of -1 is, used, this results in a new row being inserted at the last position.
           var tr = table.insertRow(-1); //-> table row
@@ -91,17 +92,23 @@ getdata() {
             var button2 = document.createElement('button');
             button1.innerHTML = "VIEW";
             button2.innerHTML = "DELETE";
+            button1.style.fontSize = "1.7rem";
+            button2.style.fontSize = "1.7rem";
+            button1.style.color="#98bce7";
+            button2.style.color="red";
             let recordId = data[k]['RECORD_ID'];
             rowNums[recordId] = k + 1 //the k+1 row is the row for record id
             recordIdArray[k] = recordId;
             
             for(var h = 0; h <col.length; h++){
               tabCell = tr.insertCell(-1);  //insert new cells(<td> elements)
+              tabCell.setAttribute("width","25%");
+              tabCell.setAttribute("align","center");
               //맨 오른쪽 세로부터 시작(그것을 뒤집음)
               //var stuff = data[k][col[3]];
               if(h<3){
                 tabCell.innerHTML = data[k][col[h]];
-                tabCell.setAttribute("align","center");
+
     
               }else{
                 tabCell.appendChild(button1);
@@ -186,13 +193,15 @@ viewByDate(showData) {
 
           //1. create dynamic table
           var table = document.createElement("table");
+          table.style.fontSize="1.75rem";
+          table.setAttribute("width","100%");
 
 
           
           //2. create html table header row using the extracted headers above
           //The value of -1 is, used, this results in a new row being inserted at the last position.
           var tr = table.insertRow(-1); //-> table row
-          table.setAttribute("align","center");
+          // table.setAttribute("width","auto");
           
           var rowNums = {};  
           rowNums['headers'] = 0;  // the zeroth row is the headers
@@ -206,15 +215,22 @@ viewByDate(showData) {
               var button2 = document.createElement('button');
               button1.innerHTML = "VIEW";
               button2.innerHTML = "DELETE";
+              button1.style.fontSize = "1.7rem";
+              //button2.style.fontSize = "1.7rem";
+              button1.style.color="#98bce7";
+              //button2.style.color="red";
               let recordId = data[k]['RECORD_ID'];
               rowNums[recordId] = k + 1 //the k+1 row is the row for record id
               recordIdArray[k] = recordId;
 
               for(var h = 0; h <col.length; h++){
               tabCell = tr.insertCell(-1);  //insert new cells(<td> elements)
+
+
               //맨 오른쪽 세로부터 시작(그것을 뒤집음)
               //var stuff = data[k][col[3]];
-              tabCell.setAttribute("padding","16px"); 
+                tabCell.setAttribute("width","25%");
+                tabCell.setAttribute("align","center");
               if(h<3){
                 tabCell.innerHTML = data[k][col[h]];
                 

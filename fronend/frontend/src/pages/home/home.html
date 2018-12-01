@@ -1,15 +1,16 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>MUA</ion-title>
-    <button ion-button round outline ion-button (click)="getdata()" small>
-      <ion-icon name="arrow-back"></ion-icon>
-    </button>
+    <ion-title><ion-buttons (click)="getdata()" >
+      <ion-icon name="arrow-back"></ion-icon>&nbsp;MUA
+    </ion-buttons>
+      </ion-title>
+
     </ion-navbar>
-    <ion-grid style="background-color:hsl(214, 70%, 87%)" >
+    <ion-grid align="center" style="background-color:hsl(214, 70%, 87%)" >
         <ion-row> 
             
           <ion-col no-padding>
-              <button ion-button color="dark" clear small>DATE-<ion-icon name="md-arrow-dropdown" style="align-items: right"></ion-icon></button>
+              <button ion-button color="dark" clear small>DATE<ion-icon name="md-arrow-dropdown" style="align-items: right"></ion-icon></button>
               
            
             <ion-datetime style="font-size:10px; text-align:start" [(ngModel)]="date1" required name="date1" displayFormat="none" pickerFormat="YYYY-MM-DD" (ngModelChange)="viewByDate('showData')"[ngModelOptions]="{standalone:true}" small>
@@ -45,31 +46,15 @@
     
       <ion-col no-padding><button ion-button color="dark" clear (click)="pickdate">DATE</button></ion-col>
       -->
-      <div style="position: center">
-    <ion-card  style="width: 120%; background-color:hsl(214, 70%, 87%);" >
+<ion-grid>
+  <ion-col>
+    <p  id="showData"></p>
+  </ion-col>
+</ion-grid>
 
-      
-    <!-- <ion-grid>
-        <ion-row> 
-            
-          <ion-col no-padding>
-              <button ion-button color="dark" clear small>DATE-<ion-icon name="md-arrow-dropdown" style="align-items: right"></ion-icon></button>
-              
-           
-            <ion-datetime style="font-size:10px; text-align:start" [(ngModel)]="date1" required name="date1" displayFormat="YYYY-MM-DD" pickerFormat="YYYY-MM-DD" (ngModelChange)="viewByDate('showData')"[ngModelOptions]="{standalone:true}" small>
-            </ion-datetime>
-          </ion-col>
-          
-          <ion-col no-padding><ion-label style="font-weight:bold">CATEGORY</ion-label></ion-col>
-          <ion-col no-padding><ion-label style="font-weight:bold">EXPENSES</ion-label></ion-col>
-          <ion-col no-padding><ion-label style="font-weight:bold">DETAILS</ion-label></ion-col>
-        </ion-row>
-      </ion-grid>
-   -->
-    </ion-card>
-  </div>
-  <p id="showData"></p>
-   
+
+
+
 
  
 </ion-content>
